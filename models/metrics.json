@@ -1,0 +1,12 @@
+{
+  "backend": "xgboost",
+  "commodity": "chilli",
+  "n_train": 2000,
+  "n_test": 500,
+  "mae": 9.078,
+  "rmse": 12.44,
+  "r2": 0.86,
+  "cv_mae_mean": 9.069,
+  "cv_mae_std": 0.507,
+  "risk_band_accuracy": 0.724
+}

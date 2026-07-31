@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lotiq"
+version = "0.1.0"
+description = "AI spoilage-risk scoring for spice-warehouse lots (chilli pilot)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "LotIQ" }]
+keywords = ["machine-learning", "xgboost", "shap", "fastapi", "streamlit", "agriculture"]
+
+# Intended production stack. XGBoost + SHAP are the primary model/explainer;
+# the code falls back to scikit-learn + an ablation explainer if they are
+# unavailable, so the pipeline still runs end to end.
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "scipy>=1.11",
+    "joblib>=1.3",
+    "xgboost>=2.0",
+    "shap>=0.44",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "pydantic>=2.6",
+    "streamlit>=1.33",
+    "plotly>=5.20",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+# Optional LLM-generated explanations via the Anthropic API.
+llm = ["anthropic>=0.34"]
+# Tooling for tests and notebooks.
+dev = ["pytest>=8.0", "jupyter>=1.0", "nbformat>=5.9", "ipykernel>=6.29"]
+
+[project.scripts]
+lotiq-generate = "lotiq.data.generate:main"
+lotiq-train = "lotiq.models.train:main"
+lotiq-snapshot = "lotiq.data.snapshot:main"
+lotiq-score = "lotiq.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

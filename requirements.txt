@@ -1,0 +1,30 @@
+# Runtime dependencies for LotIQ.
+# Either `pip install -r requirements.txt` or `pip install -e .` works.
+# (For tests + notebooks also run: `pip install -e ".[dev]"`)
+
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.3
+scipy>=1.11
+joblib>=1.3
+
+# Model + explainability (intended production stack).
+# If a wheel is unavailable for your platform, the code falls back to
+# scikit-learn + an ablation explainer and still runs end to end.
+xgboost>=2.0
+shap>=0.44
+
+# API
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+
+# Dashboard
+streamlit>=1.33
+plotly>=5.20
+
+# Plots / notebooks
+matplotlib>=3.8
+
+# Optional: LLM-generated explanations (needs ANTHROPIC_API_KEY).
+# anthropic>=0.34

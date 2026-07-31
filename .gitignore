@@ -1,0 +1,43 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.ipynb_checkpoints/
+
+# --- Environments ---
+.venv/
+venv/
+env/
+.python-version
+
+# --- Tooling ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- OS / editors ---
+.DS_Store
+.idea/
+.vscode/
+
+# --- Data & models -------------------------------------------------------
+# By default we do NOT commit raw or processed data or trained models...
+data/raw/*
+data/processed/*
+models/*
+
+# ...but we DO commit the small synthetic demo artefacts and the pilot model
+# so the repo runs (API + dashboard) immediately after cloning. These are
+# SYNTHETIC prototype artefacts, not real operational data.
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!data/synthetic/
+!data/synthetic/*.csv
+!models/lotiq_chilli.pkl
+!models/metrics.json
