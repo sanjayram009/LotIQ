@@ -4,8 +4,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 
-> Replace `<your-username>/<your-repo>` in the CI badge URL after you push.
-
 LotIQ is a prototype **software intelligence layer** for spice warehouses. Given a
 lot's sensor readings (temperature, humidity, moisture, CO₂) and lab/intake data
 (oleoresin, colour grade, storage time), it does three things:
