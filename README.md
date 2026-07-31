@@ -76,7 +76,7 @@ Requires Python 3.10+.
 
 ```bash
 # 1. Clone and enter
-git clone <your-fork-url> LotIQ && cd LotIQ
+git clone https://github.com/sanjayram009/LotIQ.git  LotIQ && cd LotIQ
 
 # 2. Install (editable) + dev tools
 python -m pip install -e ".[dev]"
