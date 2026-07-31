@@ -1,6 +1,6 @@
 # LotIQ 🌶️ — Spoilage-Risk Scoring for Spice Warehouses
 
-[![CI](https://github.com/<your-username>/<your-repo>/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/<your-repo>/actions/workflows/ci.yml)
+[![CI](https://github.com/sanjayram009/LotIQ/actions/workflows/ci.yml/badge.svg)](https://github.com/sanjayram009/LotIQ/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 
