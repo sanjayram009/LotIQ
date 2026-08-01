@@ -32,7 +32,11 @@ _KNOWN = [
 
 def score_frame(df: pd.DataFrame, model_path: str | Path = MODEL_PATH,
                 top_k: int = 3) -> pd.DataFrame:
+
     """Return a copy of `df` with risk columns appended."""
+    cols_to_drop = ["risk_score", "risk_level", "recommendation", "explanation"]
+    cols_to_drop.extend([f"top_factor_{i + 1}" for i in range(top_k)])
+    df = df.drop(columns=[c for c in cols_to_drop if c in df.columns])
     bundle = load_bundle(str(model_path))
     present = [c for c in _KNOWN if c in df.columns]
 
